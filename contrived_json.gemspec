@@ -2,7 +2,7 @@ require File.expand_path("../lib/contrived_json/version", __FILE__)
 
 Gem::Specification.new do |s|
     s.name    = "contrived_json"
-    s.version = SlowBlink::VERSION
+    s.version = ContrivedJSON::VERSION
     s.date = Date.today.to_s
     s.summary = "A Flex/Bison based JSON parser"
     s.author  = "Cameron Harper"
