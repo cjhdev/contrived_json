@@ -55,8 +55,6 @@ Rehearsal ------------------------------------
   0.100000   0.000000   0.100000 (  0.103996)
 ~~~
 
-See [parser.rb](benchmark/parse.rb).
-
 ## License
 
 ContrivedJSON has an MIT license
