@@ -7,6 +7,9 @@ This project exists to demonstrate what is required to
 produce a Ruby native extension from Flex and Bison configuration
 files.
 
+[![Build Status](https://travis-ci.org/cjhdev/contrived_json.svg?branch=master)](https://travis-ci.org/cjhdev/contrived_json)
+[![Gem Version](https://badge.fury.io/rb/contrived_json.svg)](https://badge.fury.io/rb/contrived_json)
+
 ## Highlights
 
 - Similar interface to Ruby standard library JSON (`ContrivedJSON::JSON.parse`)
