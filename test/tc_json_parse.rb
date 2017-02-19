@@ -12,7 +12,7 @@ class TestJSON < Test::Unit::TestCase
 
     def test_wrong_type
         input = 42
-        assert_raise TypeError do
+        assert_raise do
             JSON.parse(input)
         end
     end
