@@ -22,8 +22,8 @@ files.
 
 The bulk of the implementation is contained within these files:
 
--   [parser.l](ext/contrived_json/ext_parser/parser.l) (lexer configuration)
--   [parser.y](ext/contrived_json/ext_parser/parser.y) (parser configuration)
+-   [parser.l](etc/contrived_json/ext_parser/parser.l) (lexer configuration)
+-   [parser.y](etc/contrived_json/ext_parser/parser.y) (parser configuration)
 
 ## Source Code Generation
 
