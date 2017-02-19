@@ -1,45 +1,85 @@
 ContrivedJSON
 =============
 
-A JSON parser implemented using Flex, Bison, and Ruby.
+A Ruby JSON parser implemented using Flex and Bison.
 
-This project exists to demonstrate what is required to
-produce a Ruby native extension from Flex and Bison configuration
-files.
+This project demonstrates how to produce an LALR or
+GLR based parser in Ruby using Flex, Bison, and the Ruby C API.
 
 [![Build Status](https://travis-ci.org/cjhdev/contrived_json.svg?branch=master)](https://travis-ci.org/cjhdev/contrived_json)
 [![Gem Version](https://badge.fury.io/rb/contrived_json.svg)](https://badge.fury.io/rb/contrived_json)
 
-## Highlights
+## ContrivedJSON Highlights
 
-- Similar interface to Ruby standard library JSON (`ContrivedJSON::JSON.parse`)
 - Big number support
     - Fractions and exponents are captured using `BigDecimal::new`
-    - Integers are capured using `String#to_i`
+    - Integers are captured using `String#to_i`
 - Syntax error reporting with location and token information
-- Generated parser source has no additional runtime dependencies
-- Bulk of implementation completed within ~200 LOC
+- No additional runtime dependencies
+- Bulk of implementation within ~200 lines of configuration ([parser.l](etc/contrived_json/ext_parser/parser.l) and [parser.y](etc/contrived_json/ext_parser/parser.y))
 - Faster than standard library `JSON.parse`
+- Works on MRI Ruby 1.9.3 and up
 
-## Parser Configuration
+## The Interface
 
-The bulk of the implementation is contained within these files:
+ContrivedJSON implements a parse method very similar to the standard library
+`JSON.parse`. It looks like this:
 
--   [parser.l](etc/contrived_json/ext_parser/parser.l) (lexer configuration)
--   [parser.y](etc/contrived_json/ext_parser/parser.y) (parser configuration)
+~~~ ruby
+module ContrivedJSON
 
-## Source Code Generation
+    class JSON
 
-The [rakefile](rakefile) task `flexbison` orchestrates generation:
+        # @param source [String] JSON document
+        # @param opts   [Hash]
+        #
+        # @return [Hash,Array]
+        #
+        # @raise [ArgumentError]
+        # @raise [TypeError]
+        # @raise [ContrivedJSON::ParseError]
+        #
+        def self.parse(source, opts={})
+        end    
 
-~~~
-task :flexbison do    
-    system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
-    system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
+    end
+
 end
 ~~~
 
-### Benchmark
+## Usage
+
+Installing:
+
+~~~
+$ gem install contrived_json
+~~~
+
+Hello world:
+
+~~~
+$ irb
+2.3.3 :001 > require 'contrived_json'
+ => true 
+2.3.3 :002 > ContrivedJSON::JSON.parse('{"hello":"world"}')
+ => {"hello"=>"world"} 
+~~~
+
+Syntax error:
+
+~~~
+$ irb
+2.3.3 :001 > require 'contrived_json'
+ => true 
+2.3.3 :002 > ContrivedJSON::JSON.parse('{"hello":"world"')
+1:10: error: syntax error, unexpected EOF, expecting ',' or '}'
+ContrivedJSON::ParseError: parse error
+    from (irb):2:in `parse'
+    from (irb):2
+    from /home/cjh/.rvm/rubies/ruby-2.3.3/bin/irb:11:in `<main>'
+~~~
+
+Benchmark:
 
 ~~~
 $ rake benchmark
@@ -57,6 +97,47 @@ Rehearsal ------------------------------------
  ContrivedJSON::JSON.parse
   0.100000   0.000000   0.100000 (  0.103996)
 ~~~
+
+## Under The Hood
+
+Flex generates lexers. Bison generates LALR
+and GLR parsers from context free grammar.
+
+In this project the lexer is configured in [parser.l](etc/contrived_json/ext_parser/parser.l) and the parser is configured in [parser.y](etc/contrived_json/ext_parser/parser.y).
+
+The rake task `:flexbison` is used by the developer to convert configuration into source:
+~~~
+task :flexbison do    
+    system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
+    system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
+end
+~~~
+
+The result is checked into Git:
+
+- [lexer.c](ext/contrived_json/ext_parser/lexer.c) 
+- [lexer.h](ext/contrived_json/ext_parser/lexer.h) 
+- [parser.c](ext/contrived_json/ext_parser/parser.c) 
+- [parser.h](ext/contrived_json/ext_parser/parser.h) 
+
+The remainder of the code and structure in the repository is for packaging
+up the project as a Gem which will handle compilation of the parser
+source on installation.
+
+Compared to vanilla C, the Ruby C API makes working with Flex and Bison easier for the following reasons:
+
+- The API manages memory for you since you are effectively writing Ruby in C
+- It's easy to build up an Abstract Syntax Tree on the fly with built in types like array and hash
+- Flex and Bison actions are simpler since there is only one value type passed around (i.e. `VALUE`)
+- Ruby has plenty of functionality for converting between strings and numeric values (e.g. `rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0)` will
+  capture an integer of any size)
+  
+## Further Reading
+
+- [Bison user manual](https://www.gnu.org/software/bison/manual/)
+- The Flex user manual is included with the distribution and can be accessed from the terminal via the command `$ info flex`
+- [A Flex/Bison tutorial](http://aquamentus.com/flex_bison.html)
+
 
 ## License
 

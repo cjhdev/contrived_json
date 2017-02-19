@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:339  */
+#line 2 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:339  */
 
 
 typedef void * yyscan_t;
@@ -450,9 +450,9 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    36,    36,    38,    42,    42,    46,    48,    52,    54,
-      58,    60,    64,    66,    70,    70,    70,    70,    70,    70,
-      70
+       0,    37,    37,    39,    43,    43,    47,    49,    53,    55,
+      59,    61,    65,    67,    71,    71,    71,    71,    71,    71,
+      71
 };
 #endif
 
@@ -1343,55 +1343,55 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 36 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 37 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { *object = (yyvsp[0]); }
 #line 1349 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 46 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 47 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = rb_ary_new(); }
 #line 1355 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 48 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 49 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = (yyvsp[-1]); }
 #line 1361 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 52 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 53 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = rb_ary_new(); rb_ary_push((yyval), (yyvsp[0])); }
 #line 1367 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 54 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 55 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { rb_ary_push((yyval), (yyvsp[0])); }
 #line 1373 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 58 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 59 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = rb_hash_new(); }
 #line 1379 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 60 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 61 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = (yyvsp[-1]); }
 #line 1385 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 64 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 65 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { (yyval) = rb_hash_new(); rb_hash_aset((yyval), (yyvsp[-2]), (yyvsp[0])); }
 #line 1391 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 66 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+#line 67 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { rb_hash_aset((yyval), (yyvsp[-2]), (yyvsp[0])); }
 #line 1397 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
@@ -1632,7 +1632,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 72 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1906  */
+#line 73 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1906  */
 
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)

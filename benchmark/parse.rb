@@ -1,7 +1,5 @@
-require 'rubygems'
 require 'benchmark'
 require 'json'
-#require 'yajl'
 require 'contrived_json'
 
 # taken from yajl
@@ -28,16 +26,5 @@ Benchmark.bmbm do |x|
       }
     }
   end
-  if defined?(Yajl::Parser)
-    string_parser = Yajl::Parser.new
-    
-  x.report {
-    puts "Yajl::Parser#parse (from a String)"
-    times.times {
-      string_parser.parse(json)
-    }
-  }
-  end
   
-
 end

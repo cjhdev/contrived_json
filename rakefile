@@ -17,7 +17,6 @@ Rake::TestTask.new do |t|
     t.test_files = FileList["test/**/tc_*.rb"]    
 end
 
-
 task :flexbison do    
     system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
     system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"

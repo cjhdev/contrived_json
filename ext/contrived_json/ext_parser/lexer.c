@@ -460,8 +460,8 @@ static yyconst struct yy_trans_info yy_transition[1198] =
  { 126, 233 }, {   0,  17 }, {   0, 674 }, {   0,  17 }, {   0, 672 },
 
  {   0,  17 }, {   0, 670 }, {   0,  17 }, {   0, 668 }, {   0,   4 },
- {   0, 666 }, {   0,   5 }, {   0, 664 }, {   0,  13 }, {   0, 662 },
- {   0,   1 }, {   0, 660 }, {   0,   2 }, {   0, 658 }, {   0,   9 },
+ {   0, 666 }, {   0,   5 }, {   0, 664 }, {   0,  16 }, {   0, 662 },
+ {   0,   1 }, {   0, 660 }, {   0,   2 }, {   0, 658 }, {   0,  12 },
  {   0, 656 }, {   0,   0 }, {   0, 654 }, {   0,   0 }, {   0, 652 },
  {   9,   0 }, {   0,   0 }, {   0,   0 }, {  10,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
@@ -509,12 +509,12 @@ static yyconst struct yy_trans_info yy_transition[1198] =
  { 113,   0 }, { 114,   0 }, { 115,   0 }, { 116,   0 }, { 117,   0 },
  { 118,   0 }, { 119,   0 }, { 120,   0 }, { 121,   0 }, { 122,   0 },
  { 123,   0 }, { 124,   0 }, { 125,   0 }, { 126,   0 }, {   0,   0 },
- {   0, 441 }, {   0,  13 }, {   0, 439 }, { 117, 128 }, {   0,   0 },
+ {   0, 441 }, {   0,  16 }, {   0, 439 }, { 117, 128 }, {   0,   0 },
  { 115, 127 }, {   0,   0 }, { 108, 120 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0, 429 }, {   0,   0 }, {   0, 427 },
- {   0,   0 }, {   0,   0 }, {   0, 424 }, {   0,  16 }, {   0, 422 },
+ {   0,   0 }, {   0,   0 }, {   0, 424 }, {   0,  11 }, {   0, 422 },
 
- {   0,  14 }, {   0, 420 }, {   0,  15 }, {   0, 418 }, {   0,   0 },
+ {   0,   9 }, {   0, 420 }, {   0,  10 }, {   0, 418 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0, 414 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {  34,-128 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
@@ -533,7 +533,7 @@ static yyconst struct yy_trans_info yy_transition[1198] =
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {  98,-128 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, { 102,-128 }, { 101,  25 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
- { 110,-128 }, {   0,  11 }, {   0, 329 }, {   0,   0 }, { 114,-128 },
+ { 110,-128 }, {   0,  14 }, {   0, 329 }, {   0,   0 }, { 114,-128 },
  { 101,   7 }, { 116,-128 }, { 117,  87 }, { 101,   6 }, {   0,   0 },
 
  {   0,   0 }, {   0,   0 }, {   0, 319 }, {   0,   0 }, {   0,   0 },
@@ -541,7 +541,7 @@ static yyconst struct yy_trans_info yy_transition[1198] =
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {  48, 104 }, {  49, 104 }, {  50, 104 }, {  51, 104 }, {  52, 104 },
  {  53, 104 }, {  54, 104 }, {  55, 104 }, {  56, 104 }, {  57, 104 },
- {   0,  12 }, {   0, 295 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
+ {   0,  15 }, {   0, 295 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, { 124,  95 }, {  65, 104 }, {  66, 104 }, {  67, 104 },
  {  68, 104 }, {  69, 104 }, {  70, 104 }, {   0,   0 }, {   0,   0 },
  {  48,   0 }, {  49,   0 }, {  50,   0 }, {  51,   0 }, {  52,   0 },
@@ -567,7 +567,7 @@ static yyconst struct yy_trans_info yy_transition[1198] =
  {   0,   0 }, {   0,   0 }, {   0, 189 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {  65,  38 }, {  66,  38 }, {  67,  38 }, {  68,  38 },
  {  69,  38 }, {  70,  38 }, {  43,  33 }, {   0,   0 }, {  45,  33 },
- {   0,  10 }, {   0, 175 }, {  48,  47 }, {  49,  47 }, {  50,  47 },
+ {   0,  13 }, {   0, 175 }, {  48,  47 }, {  49,  47 }, {  50,  47 },
 
  {  51,  47 }, {  52,  47 }, {  53,  47 }, {  54,  47 }, {  55,  47 },
  {  56,  47 }, {  57,  47 }, {  48,  82 }, {  49,  82 }, {  50,  82 },
@@ -624,7 +624,8 @@ static yyconst struct yy_trans_info *yy_start_state_list[3] =
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "etc/contrived_json/ext_parser/parser.l"
-#line 2 "etc/contrived_json/ext_parser/parser.l"
+/* Flex configuration */
+#line 3 "etc/contrived_json/ext_parser/parser.l"
 
 #include <ruby.h>
 #include "parser.h"
@@ -636,7 +637,7 @@ static yyconst struct yy_trans_info *yy_start_state_list[3] =
 }while(0);    
 
 #define YY_NO_INPUT 1
-#line 640 "ext/contrived_json/ext_parser/lexer.c"
+#line 641 "ext/contrived_json/ext_parser/lexer.c"
 
 #define INITIAL 0
 
@@ -903,10 +904,10 @@ YY_DECL
 		}
 
 	{
-#line 29 "etc/contrived_json/ext_parser/parser.l"
+#line 30 "etc/contrived_json/ext_parser/parser.l"
 
 
-#line 910 "ext/contrived_json/ext_parser/lexer.c"
+#line 911 "ext/contrived_json/ext_parser/lexer.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -960,75 +961,75 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 31 "etc/contrived_json/ext_parser/parser.l"
+#line 32 "etc/contrived_json/ext_parser/parser.l"
 { }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 32 "etc/contrived_json/ext_parser/parser.l"
+#line 33 "etc/contrived_json/ext_parser/parser.l"
 { yylloc->last_column = 0; yylloc->last_line += yyleng; }
 	YY_BREAK
 case 3:
-#line 35 "etc/contrived_json/ext_parser/parser.l"
-case 4:
 #line 36 "etc/contrived_json/ext_parser/parser.l"
-case 5:
+case 4:
 #line 37 "etc/contrived_json/ext_parser/parser.l"
-case 6:
+case 5:
 #line 38 "etc/contrived_json/ext_parser/parser.l"
-case 7:
+case 6:
 #line 39 "etc/contrived_json/ext_parser/parser.l"
+case 7:
+#line 40 "etc/contrived_json/ext_parser/parser.l"
 case 8:
 YY_RULE_SETUP
-#line 39 "etc/contrived_json/ext_parser/parser.l"
+#line 40 "etc/contrived_json/ext_parser/parser.l"
 { return *yytext; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 41 "etc/contrived_json/ext_parser/parser.l"
-{ *yylval = rb_str_new(&yytext[1], yyleng-2U); return TOK_STRING; }
-	YY_BREAK
-case 10:
-#line 44 "etc/contrived_json/ext_parser/parser.l"
-case 11:
-#line 45 "etc/contrived_json/ext_parser/parser.l"
-case 12:
-YY_RULE_SETUP
-#line 45 "etc/contrived_json/ext_parser/parser.l"
-{ *yylval = rb_funcall(rb_const_get(rb_cObject, rb_intern("BigDecimal")), rb_intern("new"), 1, rb_str_new(yytext, yyleng)); return TOK_NUMBER; }
-	YY_BREAK
-case 13:
-YY_RULE_SETUP
-#line 47 "etc/contrived_json/ext_parser/parser.l"
-{*yylval = rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0); return TOK_NUMBER; }
-	YY_BREAK
-case 14:
-YY_RULE_SETUP
-#line 49 "etc/contrived_json/ext_parser/parser.l"
+#line 42 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = Qtrue; return TOK_TRUE; }
 	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 43 "etc/contrived_json/ext_parser/parser.l"
+{ *yylval = Qfalse; return TOK_FALSE; }
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 44 "etc/contrived_json/ext_parser/parser.l"
+{ *yylval = Qnil; return TOK_NULL; }
+	YY_BREAK
+case 12:
+YY_RULE_SETUP
+#line 46 "etc/contrived_json/ext_parser/parser.l"
+{ *yylval = rb_str_new(&yytext[1], yyleng-2U); return TOK_STRING; }
+	YY_BREAK
+case 13:
+#line 49 "etc/contrived_json/ext_parser/parser.l"
+case 14:
+#line 50 "etc/contrived_json/ext_parser/parser.l"
 case 15:
 YY_RULE_SETUP
 #line 50 "etc/contrived_json/ext_parser/parser.l"
-{ *yylval = Qfalse; return TOK_FALSE; }
+{ *yylval = rb_funcall(rb_const_get(rb_cObject, rb_intern("BigDecimal")), rb_intern("new"), 1, rb_str_new(yytext, yyleng)); return TOK_NUMBER; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 51 "etc/contrived_json/ext_parser/parser.l"
-{ *yylval = Qnil; return TOK_NULL; }
+#line 52 "etc/contrived_json/ext_parser/parser.l"
+{ *yylval = rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0); return TOK_NUMBER; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 53 "etc/contrived_json/ext_parser/parser.l"
+#line 54 "etc/contrived_json/ext_parser/parser.l"
 { return TOK_UNKNOWN; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 55 "etc/contrived_json/ext_parser/parser.l"
+#line 56 "etc/contrived_json/ext_parser/parser.l"
 ECHO;
 	YY_BREAK
-#line 1032 "ext/contrived_json/ext_parser/lexer.c"
+#line 1033 "ext/contrived_json/ext_parser/lexer.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2177,7 +2178,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 55 "etc/contrived_json/ext_parser/parser.l"
+#line 56 "etc/contrived_json/ext_parser/parser.l"
 
 
 

@@ -1,3 +1,4 @@
+/* Bison configuration */
 %{
 
 typedef void * yyscan_t;

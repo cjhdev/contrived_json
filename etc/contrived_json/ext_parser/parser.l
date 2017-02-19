@@ -1,3 +1,4 @@
+/* Flex configuration */
 %{
 
 #include <ruby.h>
@@ -31,24 +32,24 @@ INTEGER         [-]?[0-9]+
 [ \t]+      { }
 [\n]+       { yylloc->last_column = 0; yylloc->last_line += yyleng; }
     
-"," |
-"{" |
-"}" |
-"[" |
-"]" |
-":" { return *yytext; }
+","         |
+"{"         |
+"}"         |
+"["         |
+"]"         |
+":"         { return *yytext; }
 
-["]{CHAR}*["]       { *yylval = rb_str_new(&yytext[1], yyleng-2U); return TOK_STRING; }
+"true"      { *yylval = Qtrue; return TOK_TRUE; }
+"false"     { *yylval = Qfalse; return TOK_FALSE; }
+"null"      { *yylval = Qnil; return TOK_NULL; }
+
+["]{CHAR}*["]               { *yylval = rb_str_new(&yytext[1], yyleng-2U); return TOK_STRING; }
 
 {INTEGER}{FRACTION}{EXP}    |
 {INTEGER}{FRACTION}         |
 {INTEGER}{EXP}              { *yylval = rb_funcall(rb_const_get(rb_cObject, rb_intern("BigDecimal")), rb_intern("new"), 1, rb_str_new(yytext, yyleng)); return TOK_NUMBER; }
 
-{INTEGER}                   {*yylval = rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0); return TOK_NUMBER; }
-
-"true"      { *yylval = Qtrue; return TOK_TRUE; }
-"false"     { *yylval = Qfalse; return TOK_FALSE; }
-"null"      { *yylval = Qnil; return TOK_NULL; }
+{INTEGER}                   { *yylval = rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0); return TOK_NUMBER; }
 
 .           { return TOK_UNKNOWN; }
 
