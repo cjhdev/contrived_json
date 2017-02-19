@@ -1018,21 +1018,19 @@ YY_RULE_SETUP
 #line 51 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = Qnil; return TOK_NULL; }
 	YY_BREAK
-case YY_STATE_EOF(INITIAL):
-#line 53 "etc/contrived_json/ext_parser/parser.l"
-{ return TOK_EOF; }
-	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 54 "etc/contrived_json/ext_parser/parser.l"
+#line 53 "etc/contrived_json/ext_parser/parser.l"
 { return TOK_UNKNOWN; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 56 "etc/contrived_json/ext_parser/parser.l"
+#line 55 "etc/contrived_json/ext_parser/parser.l"
 ECHO;
 	YY_BREAK
-#line 1036 "ext/contrived_json/ext_parser/lexer.c"
+#line 1032 "ext/contrived_json/ext_parser/lexer.c"
+case YY_STATE_EOF(INITIAL):
+	yyterminate();
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2179,7 +2177,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 56 "etc/contrived_json/ext_parser/parser.l"
+#line 55 "etc/contrived_json/ext_parser/parser.l"
 
 
 

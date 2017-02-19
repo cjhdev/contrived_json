@@ -22,7 +22,7 @@ void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg);
 %lex-param {yyscan_t scanner}
 %parse-param {yyscan_t scanner}{VALUE *object}
 
-%token EOF      
+%token EOF      0
 %token TRUE     "'true'"
 %token FALSE    "'false'"
 %token NULL     "'null'"

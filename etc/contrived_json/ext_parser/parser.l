@@ -50,7 +50,6 @@ INTEGER         [-]?[0-9]+
 "false"     { *yylval = Qfalse; return TOK_FALSE; }
 "null"      { *yylval = Qnil; return TOK_NULL; }
 
-<<EOF>>     { return TOK_EOF; }
 .           { return TOK_UNKNOWN; }
 
 %%
