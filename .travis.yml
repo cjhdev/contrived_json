@@ -2,7 +2,7 @@ notifications:
     email: false
 language: Ruby
 rvm:
-  - 1.93
+  - 1.9.3
   - 2.0
   - 2.3.3
 script:
