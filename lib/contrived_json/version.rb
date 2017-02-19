@@ -1,0 +1,3 @@
+module ContrivedJSON
+    VERSION = '0.0.1'.freeze
+end

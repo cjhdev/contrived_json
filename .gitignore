@@ -1,0 +1,8 @@
+*.gem
+*.o
+*.so
+*.dll
+tmp/*
+!.gitignore
+Gemfile.lock
+.yardoc
