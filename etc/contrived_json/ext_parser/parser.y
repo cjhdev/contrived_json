@@ -85,28 +85,39 @@ static VALUE parse(int argc, VALUE *argv, VALUE self);
 
 void Init_ext_parser(void)
 {
-    rb_require("bigdecimal");
-    VALUE cContrivedJSON = rb_define_module("ContrivedJSON");
-    VALUE cJSON = rb_define_class_under(cContrivedJSON, "JSON", rb_cObject);
-    rb_define_singleton_method(cJSON, "parse", parse, -1);
+    VALUE cContrivedJSON;
+    rb_require("bigdecimal");    
+    cContrivedJSON = rb_define_module("ContrivedJSON");
+    rb_define_singleton_method(rb_define_class_under(cContrivedJSON, "JSON", rb_cObject), "parse", parse, -1);
     rb_define_class_under(cContrivedJSON, "ParseError", rb_eStandardError);    
 }
 
+/* parse(source, opts={}) */
 static VALUE parse(int argc, VALUE *argv, VALUE self)
 {
     yyscan_t scanner;    
     VALUE object = Qnil;
-    VALUE buffer = Qnil;
-    VALUE opt = rb_hash_new();
+    VALUE source = Qnil;
+    VALUE opts = rb_hash_new();
     int retval = 0;
+    
+    switch(rb_scan_args(argc, argv, "11", &source, &opts)){
+    case 1:
+    case 2:
+        break;
+    default:
+        rb_raise(rb_eArgError, "wrong number of arguments");
+        break;
+    }
 
-    rb_scan_args(argc, argv, "11", &buffer, &opt);
+    if(rb_obj_is_kind_of(source, rb_cString) != Qtrue){
 
-    buffer = rb_funcall(buffer, rb_intern("to_s"), 0);
+        rb_raise(rb_eTypeError, "source must be a kind of String");
+    }
 
     if(yylex_init(&scanner) == 0){
 
-        if(yy_scan_bytes((const char *)RSTRING_PTR(buffer), RSTRING_LEN(buffer), scanner)){
+        if(yy_scan_bytes((const char *)RSTRING_PTR(source), RSTRING_LEN(source), scanner)){
 
             retval = yyparse(scanner, &object);
         }
