@@ -35,7 +35,7 @@ The [rakefile](rakefile) task `flexbison` orchestrates generation:
 ~~~
 task :flexbison do    
     system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
-    system "bison #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
+    system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
 end
 ~~~
 
