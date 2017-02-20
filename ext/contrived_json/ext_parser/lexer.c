@@ -904,7 +904,7 @@ YY_DECL
 		}
 
 	{
-#line 30 "etc/contrived_json/ext_parser/parser.l"
+#line 29 "etc/contrived_json/ext_parser/parser.l"
 
 
 #line 911 "ext/contrived_json/ext_parser/lexer.c"
@@ -961,72 +961,72 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 32 "etc/contrived_json/ext_parser/parser.l"
+#line 31 "etc/contrived_json/ext_parser/parser.l"
 { }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 33 "etc/contrived_json/ext_parser/parser.l"
+#line 32 "etc/contrived_json/ext_parser/parser.l"
 { yylloc->last_column = 0; yylloc->last_line += yyleng; }
 	YY_BREAK
 case 3:
-#line 36 "etc/contrived_json/ext_parser/parser.l"
+#line 35 "etc/contrived_json/ext_parser/parser.l"
 case 4:
-#line 37 "etc/contrived_json/ext_parser/parser.l"
+#line 36 "etc/contrived_json/ext_parser/parser.l"
 case 5:
-#line 38 "etc/contrived_json/ext_parser/parser.l"
+#line 37 "etc/contrived_json/ext_parser/parser.l"
 case 6:
-#line 39 "etc/contrived_json/ext_parser/parser.l"
+#line 38 "etc/contrived_json/ext_parser/parser.l"
 case 7:
-#line 40 "etc/contrived_json/ext_parser/parser.l"
+#line 39 "etc/contrived_json/ext_parser/parser.l"
 case 8:
 YY_RULE_SETUP
-#line 40 "etc/contrived_json/ext_parser/parser.l"
+#line 39 "etc/contrived_json/ext_parser/parser.l"
 { return *yytext; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 42 "etc/contrived_json/ext_parser/parser.l"
+#line 41 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = Qtrue; return TOK_TRUE; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 43 "etc/contrived_json/ext_parser/parser.l"
+#line 42 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = Qfalse; return TOK_FALSE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 44 "etc/contrived_json/ext_parser/parser.l"
+#line 43 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = Qnil; return TOK_NULL; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 46 "etc/contrived_json/ext_parser/parser.l"
+#line 45 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = rb_str_new(&yytext[1], yyleng-2U); return TOK_STRING; }
 	YY_BREAK
 case 13:
-#line 49 "etc/contrived_json/ext_parser/parser.l"
+#line 48 "etc/contrived_json/ext_parser/parser.l"
 case 14:
-#line 50 "etc/contrived_json/ext_parser/parser.l"
+#line 49 "etc/contrived_json/ext_parser/parser.l"
 case 15:
 YY_RULE_SETUP
-#line 50 "etc/contrived_json/ext_parser/parser.l"
+#line 49 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = rb_funcall(rb_const_get(rb_cObject, rb_intern("BigDecimal")), rb_intern("new"), 1, rb_str_new(yytext, yyleng)); return TOK_NUMBER; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 52 "etc/contrived_json/ext_parser/parser.l"
+#line 51 "etc/contrived_json/ext_parser/parser.l"
 { *yylval = rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0); return TOK_NUMBER; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 54 "etc/contrived_json/ext_parser/parser.l"
+#line 53 "etc/contrived_json/ext_parser/parser.l"
 { return TOK_UNKNOWN; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 56 "etc/contrived_json/ext_parser/parser.l"
+#line 55 "etc/contrived_json/ext_parser/parser.l"
 ECHO;
 	YY_BREAK
 #line 1033 "ext/contrived_json/ext_parser/lexer.c"
@@ -2178,7 +2178,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 56 "etc/contrived_json/ext_parser/parser.l"
+#line 55 "etc/contrived_json/ext_parser/parser.l"
 
 
 

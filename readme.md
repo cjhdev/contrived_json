@@ -3,8 +3,7 @@ ContrivedJSON
 
 A Ruby JSON parser implemented using Flex and Bison.
 
-This project demonstrates how to produce an LALR or
-GLR based parser in Ruby using Flex, Bison, and the Ruby C API.
+This project is an example of how to use Flex and Bison with Ruby to quickly produce LALR and GLR based parsers.
 
 [![Build Status](https://travis-ci.org/cjhdev/contrived_json.svg?branch=master)](https://travis-ci.org/cjhdev/contrived_json)
 [![Gem Version](https://badge.fury.io/rb/contrived_json.svg)](https://badge.fury.io/rb/contrived_json)

@@ -17,11 +17,10 @@
 %option fast
 %option nounput noyywrap noinput
 
-HEX_DIGIT       [0-9a-fA-F]
-UNESCAPEDCHAR   [ -!#-\[\]-~]
-ESCAPEDCHAR     \\["\\bfnrt/]
-UNICODECHAR     \\u{HEX_DIGIT}{HEX_DIGIT}{HEX_DIGIT}{HEX_DIGIT}
-CHAR            {UNESCAPEDCHAR}|{ESCAPEDCHAR}|{UNICODECHAR}
+UNICODE         \\u[0-9a-fA-F]{4}
+UNESCAPED       [ !#-\[\]-~]
+ESCAPED         \\["\\bfnrt/]
+CHAR            {UNESCAPED}|{ESCAPED}|{UNICODE}
 
 EXP             [e|E][+|-]?[0-9]+
 FRACTION        [.][0-9]+

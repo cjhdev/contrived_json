@@ -78,4 +78,14 @@ class TestJSON < Test::Unit::TestCase
         end
     end
 
+    def test_unicode_string
+        input = '{"test":"\u005C"}'
+        JSON.parse(input)
+    end
+
+    def test_escaped_characters
+        input = '{"test":"\"\\\/\b\f\n\r\t\u005C"}'
+        JSON.parse(input)
+    end
+
 end
