@@ -130,6 +130,33 @@ Compared to vanilla C, the Ruby C API makes working with Flex and Bison easier f
 - Flex and Bison actions are simpler since there is only one value type passed around (i.e. `VALUE`)
 - Ruby has plenty of functionality for converting between strings and numeric values (e.g. `rb_funcall(rb_str_new(yytext, yyleng), rb_intern("to_i"), 0)` will
   capture an integer of any size)
+
+## Native Extension Pitfalls
+
+It's very easy to write intermittent bugs caused by the garbage collector in Ruby native extensions.
+
+The problem is usually that you have created an object in the VM but
+there is no way for the VM to see your reference to it. When the GC runs,
+objects without references are freed. You will then get a segfault next
+time you try to access the freed object.
+
+Ruby can recognise references in your C extension if:
+
+- They are on the stack
+- They are in the registers
+
+This *can* go wrong when the C compiler optimises away references. This *will* go wrong
+if references are kept in data or on the heap.
+
+Bison in LALR mode can be configured to keep its data structures on the stack. This
+is done in ContrivedJSON and *should* ensure that Ruby can find the token
+references in the event that the GC runs (I need to run some tests to prove this).
+
+Bison GLR mode is different in that it stores its data structures on the heap.
+In this situation you will need to find some way to connect your references (stored on the heap) to
+to ruby VM.
+[SlowBlink](https://github.com/cjhdev/slow_blink "SlowBlink") for example solves this problem by pushing
+references onto an instance variable Array. 
   
 ## Further Reading
 

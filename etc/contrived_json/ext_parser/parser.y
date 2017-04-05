@@ -4,6 +4,8 @@
 typedef void * yyscan_t;
 #define YY_TYPEDEF_YY_SCANNER_T
 
+#define YYMAXDEPTH YYINITDEPTH
+
 #include <ruby.h>
 
 #include "parser.h"
