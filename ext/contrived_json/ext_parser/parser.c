@@ -394,18 +394,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  20
+#define YYFINAL  19
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   31
+#define YYLAST   28
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  15
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  8
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  20
+#define YYNRULES  18
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  31
+#define YYNSTATES  30
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -452,9 +452,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    39,    39,    41,    45,    45,    49,    51,    55,    57,
-      61,    63,    67,    69,    73,    73,    73,    73,    73,    73,
-      73
+       0,    39,    39,    43,    47,    49,    53,    55,    59,    61,
+      65,    67,    71,    71,    71,    71,    71,    71,    71
 };
 #endif
 
@@ -480,10 +479,10 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -6
+#define YYPACT_NINF -7
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-6)))
+  (!!((Yystate) == (-7)))
 
 #define YYTABLE_NINF -1
 
@@ -494,10 +493,9 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      11,    -3,     2,     5,    -6,    -6,    -6,    -6,    -6,    -6,
-      -6,    -6,    -6,    -6,    18,    -6,    -6,     8,    -6,    14,
-      -6,    -6,     7,     7,    15,    -6,    -6,    -6,    12,     7,
-      -6
+      14,    -7,    -7,    -7,    -7,    -7,    -2,     0,     9,    -7,
+      -7,    -7,    -7,    -7,    17,    -7,    -3,    -7,     1,    -7,
+      -7,    14,    14,    18,    -7,    -7,    -7,    11,    14,    -7
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -505,22 +503,21 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       3,     0,     0,     0,     2,     4,     5,    15,    16,    17,
-      14,    18,     6,    20,     0,    19,     8,     0,    10,     0,
-       1,     7,     0,     0,     0,    11,     9,    12,     0,     0,
-      13
+       0,    13,    14,    15,    12,    16,     0,     0,     0,     2,
+      18,    17,     3,     4,     0,     6,     0,     8,     0,     1,
+       5,     0,     0,     0,     9,     7,    10,     0,     0,    11
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -6,    -6,    -6,    30,    -6,    31,    -6,    -5
+      -7,    -7,    -7,    -7,    -7,    -7,    -7,    -6
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     3,     4,    13,    14,    15,    19,    16
+      -1,     8,     9,    10,    14,    11,    18,    12
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -528,44 +525,39 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       7,     8,     9,    10,    11,    20,     1,    12,    17,     2,
-       7,     8,     9,    10,    11,    18,     1,    26,    27,     2,
-       1,    28,    23,     2,    30,    24,    29,    25,    21,    22,
-       5,     6
+      15,     1,     2,     3,     4,     5,    16,     6,    13,    19,
+       7,    22,    23,    17,    24,    25,    26,     1,     2,     3,
+       4,     5,    29,     6,    27,    28,     7,    20,    21
 };
 
 static const yytype_uint8 yycheck[] =
 {
-       3,     4,     5,     6,     7,     0,     9,    10,     6,    12,
-       3,     4,     5,     6,     7,    13,     9,    22,    23,    12,
-       9,     6,    14,    12,    29,    11,    14,    13,    10,    11,
-       0,     0
+       6,     3,     4,     5,     6,     7,     6,     9,    10,     0,
+      12,    14,    11,    13,    13,    21,    22,     3,     4,     5,
+       6,     7,    28,     9,     6,    14,    12,    10,    11
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     9,    12,    16,    17,    18,    20,     3,     4,     5,
-       6,     7,    10,    18,    19,    20,    22,     6,    13,    21,
-       0,    10,    11,    14,    11,    13,    22,    22,     6,    14,
-      22
+       0,     3,     4,     5,     6,     7,     9,    12,    16,    17,
+      18,    20,    22,    10,    19,    22,     6,    13,    21,     0,
+      10,    11,    14,    11,    13,    22,    22,     6,    14,    22
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    15,    16,    16,    17,    17,    18,    18,    19,    19,
-      20,    20,    21,    21,    22,    22,    22,    22,    22,    22,
-      22
+       0,    15,    16,    17,    18,    18,    19,    19,    20,    20,
+      21,    21,    22,    22,    22,    22,    22,    22,    22
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     0,     1,     1,     2,     3,     1,     3,
-       2,     3,     3,     5,     1,     1,     1,     1,     1,     1,
-       1
+       0,     2,     1,     1,     2,     3,     1,     3,     2,     3,
+       3,     5,     1,     1,     1,     1,     1,     1,     1
 };
 
 
@@ -1346,60 +1338,60 @@ yyreduce:
     {
         case 2:
 #line 39 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { *object = (yyvsp[0]); }
-#line 1351 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+    { *object = (yyvsp[0]); YYACCEPT; }
+#line 1343 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+    break;
+
+  case 4:
+#line 47 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = rb_ary_new(); }
+#line 1349 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+    break;
+
+  case 5:
+#line 49 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = (yyvsp[-1]); }
+#line 1355 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 49 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = rb_ary_new(); }
-#line 1357 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 53 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = rb_ary_new(); rb_ary_push((yyval), (yyvsp[0])); }
+#line 1361 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 51 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = (yyvsp[-1]); }
-#line 1363 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 55 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { rb_ary_push((yyval), (yyvsp[0])); }
+#line 1367 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 55 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = rb_ary_new(); rb_ary_push((yyval), (yyvsp[0])); }
-#line 1369 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 59 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = rb_hash_new(); }
+#line 1373 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 57 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { rb_ary_push((yyval), (yyvsp[0])); }
-#line 1375 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 61 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = (yyvsp[-1]); }
+#line 1379 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 61 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = rb_hash_new(); }
-#line 1381 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 65 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
+    { (yyval) = rb_hash_new(); rb_hash_aset((yyval), (yyvsp[-2]), (yyvsp[0])); }
+#line 1385 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 63 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = (yyvsp[-1]); }
-#line 1387 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
-    break;
-
-  case 12:
 #line 67 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
-    { (yyval) = rb_hash_new(); rb_hash_aset((yyval), (yyvsp[-2]), (yyvsp[0])); }
-#line 1393 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
-    break;
-
-  case 13:
-#line 69 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1646  */
     { rb_hash_aset((yyval), (yyvsp[-2]), (yyvsp[0])); }
-#line 1399 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 1391 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
     break;
 
 
-#line 1403 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
+#line 1395 "ext/contrived_json/ext_parser/parser.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1634,7 +1626,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 75 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1906  */
+#line 73 "etc/contrived_json/ext_parser/parser.y" /* yacc.c:1906  */
 
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)
@@ -1666,6 +1658,8 @@ static VALUE parse(int argc, VALUE *argv, VALUE self)
     VALUE source = Qnil;
     VALUE opts = rb_hash_new();
     int retval = 0;
+    VALUE input = Qnil;
+    VALUE cStringIO = rb_const_get(rb_cObject, rb_intern("StringIO"));
     
     switch(rb_scan_args(argc, argv, "11", &source, &opts)){
     case 1:
@@ -1676,17 +1670,24 @@ static VALUE parse(int argc, VALUE *argv, VALUE self)
         break;
     }
 
-    if(rb_obj_is_kind_of(source, rb_cString) != Qtrue){
-
-        rb_raise(rb_eTypeError, "source must be a kind of String");
+    if(rb_respond_to(source, rb_intern("read"))){
+            
+        input = source;        
+    }
+    else if(rb_obj_is_kind_of(source, rb_cString) == Qtrue){
+    
+        input = rb_funcall(cStringIO, rb_intern("new"), 1, source);    
+    }
+    else{
+    
+        rb_raise(rb_eTypeError, "no implicit conversion to String");
     }
 
     if(yylex_init(&scanner) == 0){
 
-        if(yy_scan_bytes((const char *)RSTRING_PTR(source), RSTRING_LEN(source), scanner)){
-
-            retval = yyparse(scanner, &object);
-        }
+        yyset_in((FILE*)(&input), scanner);
+        
+        retval = yyparse(scanner, &object);
 
         yylex_destroy(scanner);        
         

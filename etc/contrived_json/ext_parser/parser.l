@@ -10,6 +10,30 @@
     yylloc->last_column += yyleng;\
 }while(0);    
 
+static VALUE read_wrapper(VALUE arg)
+{
+    VALUE *aarg = (VALUE *)arg;
+    return rb_funcall(aarg[0], rb_intern("readpartial"), 1, aarg[1]);
+}
+
+static VALUE read_wrapper_rescue(VALUE arg)
+{
+    return Qnil;
+}
+
+#define YY_INPUT(buf, result, max_size) do {\
+    VALUE arg[2];\
+    VALUE str;\
+    result = 0U;\
+    arg[0] = *((VALUE *)yyin);\
+    arg[1] = SIZET2NUM(max_size);\
+    str = rb_rescue2(read_wrapper, (VALUE)arg, read_wrapper_rescue, Qnil, rb_eEOFError, 0);\
+    if(str != Qnil){\
+        (void)memcpy(buf, RSTRING_PTR(str), RSTRING_LEN(str));\    
+        result = (size_t)RSTRING_LEN(str);\
+    }\
+} while(0)\    
+    
 %}
 
 %option bison-locations

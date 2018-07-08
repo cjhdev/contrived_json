@@ -36,13 +36,11 @@ void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg);
 %%    
 
 top:
-    type                { *object = $type; }
-    |
-    %empty
+    type                { *object = $type; YYACCEPT; }
     ;
     
 type:
-    array | object
+    value
     ;
 
 array:
@@ -103,6 +101,8 @@ static VALUE parse(int argc, VALUE *argv, VALUE self)
     VALUE source = Qnil;
     VALUE opts = rb_hash_new();
     int retval = 0;
+    VALUE input = Qnil;
+    VALUE cStringIO = rb_const_get(rb_cObject, rb_intern("StringIO"));
     
     switch(rb_scan_args(argc, argv, "11", &source, &opts)){
     case 1:
@@ -113,17 +113,24 @@ static VALUE parse(int argc, VALUE *argv, VALUE self)
         break;
     }
 
-    if(rb_obj_is_kind_of(source, rb_cString) != Qtrue){
-
-        rb_raise(rb_eTypeError, "source must be a kind of String");
+    if(rb_respond_to(source, rb_intern("read"))){
+            
+        input = source;        
+    }
+    else if(rb_obj_is_kind_of(source, rb_cString) == Qtrue){
+    
+        input = rb_funcall(cStringIO, rb_intern("new"), 1, source);    
+    }
+    else{
+    
+        rb_raise(rb_eTypeError, "no implicit conversion to String");
     }
 
     if(yylex_init(&scanner) == 0){
 
-        if(yy_scan_bytes((const char *)RSTRING_PTR(source), RSTRING_LEN(source), scanner)){
-
-            retval = yyparse(scanner, &object);
-        }
+        yyset_in((FILE*)(&input), scanner);
+        
+        retval = yyparse(scanner, &object);
 
         yylex_destroy(scanner);        
         

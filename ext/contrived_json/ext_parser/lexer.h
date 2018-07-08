@@ -355,7 +355,7 @@ extern int yylex \
 #undef YY_DECL
 #endif
 
-#line 55 "etc/contrived_json/ext_parser/parser.l"
+#line 79 "etc/contrived_json/ext_parser/parser.l"
 
 
 #line 362 "ext/contrived_json/ext_parser/lexer.h"

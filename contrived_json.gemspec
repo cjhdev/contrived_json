@@ -1,4 +1,5 @@
 require File.expand_path("../lib/contrived_json/version", __FILE__)
+require 'date'
 
 Gem::Specification.new do |s|
     s.name    = "contrived_json"
