@@ -139,8 +139,7 @@ class TestJSON < Test::Unit::TestCase
       assert_equal(expected, JSON.parse(input))
       assert_equal(expected, JSON.parse(input))        
     end
-       
-=begin       
+             
     def test_blocking_read
     
       rd, wr = IO.pipe
@@ -152,15 +151,11 @@ class TestJSON < Test::Unit::TestCase
       
       t = Thread.new do
         
-        puts "running"
-        
         wr.write "{\"hello\" : \"hello\","
         
-        sleep 1
+        sleep 0.5
         
         wr.write "\"world\" : \"world\"} "
-        
-        puts "done"
         
       end
       
@@ -171,6 +166,5 @@ class TestJSON < Test::Unit::TestCase
       t.join
       
     end
-=end    
 
 end

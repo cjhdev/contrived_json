@@ -1,29 +1,32 @@
 require 'rake/testtask'
 require 'rake/extensiontask'
 
-
 DIR_SRC = "ext/contrived_json/ext_parser"
 DIR_ETC = "etc/contrived_json/ext_parser"
 
+task :compile => :flexbison
+
 Rake::ExtensionTask.new  do |ext|
-    ext.name = "ext_parser"
-    ext.ext_dir = DIR_SRC
-    ext.lib_dir = "lib/contrived_json"
+  ext.name = "ext_parser"
+  ext.ext_dir = DIR_SRC
+  ext.lib_dir = "lib/contrived_json"
 end
+
+task :test => :compile
 
 Rake::TestTask.new do |t|
-    t.name = :test
-    t.libs << "lib"
-    t.test_files = FileList["test/**/tc_*.rb"]    
+  t.name = :test
+  t.libs << "lib"
+  t.test_files = FileList["test/**/tc_*.rb"]    
 end
 
-task :flexbison do    
-    system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
-    system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
+task :flexbison do      
+  system "flex --outfile=#{DIR_SRC}/lexer.c --header-file=#{DIR_SRC}/lexer.h #{DIR_ETC}/parser.l"
+  system "bison -d #{DIR_ETC}/parser.y --output=#{DIR_SRC}/parser.c"
 end
 
 task :benchmark do
-    system "ruby -Ilib -- benchmark/parse.rb"
+  system "ruby -Ilib -- benchmark/parse.rb"
 end
 
 task :default => :test
